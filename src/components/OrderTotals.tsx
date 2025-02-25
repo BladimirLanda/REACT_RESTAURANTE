@@ -1,6 +1,6 @@
 //COMPONENT ORDERTOTALS
 import { useMemo } from "react"
-import { OrderItem } from "../types/types"
+import type { OrderItem } from "../types/types"
 import { formatCurrency } from "../helpers/helpers"
 
 type OrderTotalsProps = {
@@ -15,7 +15,7 @@ function OrderTotals( { order, tip, saveOrder } : OrderTotalsProps ) {
     const tipAmount = useMemo(() => subTotalAmount * tip, [order, tip]);
     const totalAmount = useMemo(() => subTotalAmount + tipAmount, [order, tip]);
 
-    //{''}: Retorna una espaciO
+    //{''}: Retorna una espacio
     //---View---//
     return (
         <div>

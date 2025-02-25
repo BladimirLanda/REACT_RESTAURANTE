@@ -1,9 +1,9 @@
 //COMPONENTE APP
 import { menuItems } from "./data/db"
+import useOrder from "./hooks/useOrder"
 import MenuItem from "./components/MenuItem"
 import OrderContent from "./components/OrderContent"
 import OrderTotals from "./components/OrderTotals"
-import useOrder from "./hooks/useOrder"
 import TipPercentForm from "./components/TipPercentForm"
 
 function App() {
@@ -23,7 +23,9 @@ function App() {
 
           <div className="mt-10 space-y-3">
             {menuItems.map(item => (
+
               <MenuItem key={item.id} item={item} addItem={addItem} />
+
             ))}
           </div>
         </div>

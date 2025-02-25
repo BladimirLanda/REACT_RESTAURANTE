@@ -1,5 +1,5 @@
 //COMPONENT ORDERCONTENT
-import { OrderItem } from "../types/types"
+import type { OrderItem } from "../types/types"
 import { formatCurrency } from "../helpers/helpers"
 
 type OrderContentProps = {
@@ -16,15 +16,16 @@ function OrderContent( { order, removeItem } : OrderContentProps ) {
 
             <div className="mt-10 space-y-3">
                 {order.map(item => (
-                    <div className="py-5 px-2 flex justify-between items-center border-t last-of-type:border-b
-                    border-gray-200 hover:bg-gray-50" 
-                    key={item.id}>
+                    <div key={item.id}
+                    className="py-5 px-2 flex justify-between items-center border-t last-of-type:border-b
+                    border-gray-200 hover:bg-gray-50">
                         <div>
                             <p className="text-lg">
                                 {item.name} - { formatCurrency(item.price) }
                             </p>
+
                             <p className="font-black">
-                                Cantidad: {item.quantity} - 
+                                Cantidad: {item.quantity} - {''} 
                                 <span className="text-teal-900">{ formatCurrency(item.price * item.quantity) }</span>
                             </p>
                         </div>
